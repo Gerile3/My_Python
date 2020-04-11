@@ -1,2 +1,2 @@
 # Python
-My humble python stuff
+Scripts & stuffs i have written with Python 
