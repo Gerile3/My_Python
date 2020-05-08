@@ -3,6 +3,7 @@ from datetime import datetime
 
 
 def alive(date):
+    """Function to see for how much time have passed since you have been born"""
     date = date.split("/")
 
     if len(date) == 3:
@@ -28,8 +29,9 @@ def alive(date):
         seconds = mins * 60 + today.second
 
         alive = "You are alive for {} years, {} months, {} days!".format(year, month, day)
-        alive2 = "In detail thats like:\n {} months\n {} days\n {} hours\n {} mins\n {} seconds".format(months, days, hours,
-                                                                                                        mins, seconds)
+        alive2 = "In detail thats like:\n {} months\n {} days\n {} hours\n {} mins\n {} seconds".format(months, days,
+                                                                                                        hours, mins,
+                                                                                                        seconds)
 
         print(alive, alive2)
 
