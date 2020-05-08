@@ -1,8 +1,5 @@
+#!/usr/bin/env python3
 '''Draw the trajectory of a body in projectile motion'''
-# to do:
-# ask user how many plots wanted to make (for comprasion between different values)
-# add formulas as comment
-# add examples
 
 import matplotlib.pyplot as plt
 import math
@@ -23,7 +20,8 @@ def frange(start, final, interval):
     return numbers
 
 
-def draw_trajectory(u, theta):
+def draw_trajectory(ctx):
+    u, theta = ctx
     theta = math.radians(theta)
     g = 9.8
     # Time of flight
@@ -40,11 +38,23 @@ def draw_trajectory(u, theta):
 
 
 if __name__ == '__main__':
+    listo = []
     try:
-        u = float(input('Enter the initial velocity (m/s): '))
-        theta = float(input('Enter the angle of projection (degrees): '))
+        plot_number = int(input("Enter the number of plots: "))
+        for i in range(1, plot_number + 1):
+            u = float(input(f'Enter the initial velocity (m/s) for trajectory {i}: '))
+            theta = float(input(f'Enter the angle of projection (degrees) for trajectory {i}: '))
+            listo.append((u, theta))
     except ValueError:
         print('You entered an invalid input')
     else:
-        draw_trajectory(u, theta)
+        for i in range(plot_number):
+            draw_trajectory(listo[i])
+        plt.legend([f"trajectory {i}" for i in range(1, plot_number + 1)])
         plt.show()
+
+    # to do:
+    # ask user how many plots wanted to make (for comprasion between different values) ✔️
+    # add max points for plots ❌
+    # add formulas as comment ❌
+    # add examples ❌
