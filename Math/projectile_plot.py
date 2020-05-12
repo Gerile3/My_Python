@@ -7,8 +7,8 @@ import math
 
 def draw_graph(x, y):
     plt.plot(x, y)
-    plt.xlabel('x-coordinate')
-    plt.ylabel('y-coordinate')
+    plt.xlabel('Horizontal Distance')
+    plt.ylabel('Vertical Distance')
     plt.title('Projectile motion of a ball')
 
 
