@@ -14,7 +14,8 @@ def variance(numbers):
     return var
 
 
-def std_deviation(var):
+def std_deviation(numbers):
+    var = variance(numbers)
     return var**0.5
 
 
