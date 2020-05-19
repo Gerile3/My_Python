@@ -5,7 +5,6 @@ from mean_value import mean
 def variance(numbers):
     result = []
     mean_val = mean(numbers)
-    print("Mean of notes: {:.2f}".format(mean_val))
 
     for number in numbers:
         result.append((number - mean_val)**2)
