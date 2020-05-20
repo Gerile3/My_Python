@@ -9,11 +9,11 @@ def check_price(word):
     info = {}
     url = "https://www.steamprices.com/us/search/?q=" + word + "&p=1"
     response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0',
-                                            'Accept': 'text/css,*/*;q=0.1',
-                                            'Accept-Language': 'en-GB,en;q=0.5',
-                                            'Accept-Encoding': 'gzip, deflate, br',
-                                            'DNT': '1',
-                                            'Connection': 'keep-alive'})
+                                          'Accept': 'text/css,*/*;q=0.1',
+                                          'Accept-Language': 'en-GB,en;q=0.5',
+                                          'Accept-Encoding': 'gzip, deflate, br',
+                                          'DNT': '1',
+                                          'Connection': 'keep-alive'})
     soup = BeautifulSoup(response.content, "lxml")
 
     if response.status_code == 200:
