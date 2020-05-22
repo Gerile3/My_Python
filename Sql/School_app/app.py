@@ -1,4 +1,6 @@
 from dbmanager import Db_Manager
+from student import Student
+from teacher import Teacher
 
 
 class App:
@@ -15,13 +17,13 @@ class App:
             elif choice == "2":
                 self.display_teachers()
             elif choice == "3":
-                pass
+                self.add_student()
             elif choice == "4":
-                pass
+                self.add_teacher()
             elif choice == "5":
-                pass
+                self.edit_student()
             elif choice == "6":
-                pass
+                self.edit_teacher()
             elif choice == "7":
                 break
             else:
@@ -47,6 +49,59 @@ class App:
         for teacher in teachers:
             print(f"{i}-)" + teacher.Branch, teacher.Name, teacher.Surname)
             i += 1
+
+    def add_student(self):
+        s_number = input("Enter Student Number: ")
+        name = input("Enter Student Name: ")
+        surname = input("Enter Student Surname: ")
+        birthday = input("Enter Student Birthday(d/m/y): ")
+        gender = input("Enter Student Gender(M/F): ")
+        clas_id = int(input("Enter Student Class id: "))
+
+        student = Student(None, s_number, name, surname, birthday, gender, clas_id)
+        self.db.add_student(student)
+
+    def add_teacher(self):
+        branch = input("Enter Teacher Branch: ")
+        name = input("Enter Teacher Name: ")
+        surname = input("Enter Teacher Surname: ")
+        birthday = input("Enter Teacher Birthday(d/m/y): ")
+        gender = input("Enter Teacher Gender(M/F): ")
+
+        teacher = Teacher(None, branch, name, surname, birthday, gender)
+        self.db.add_teacher(teacher)
+
+    def edit_student(self):
+        self.display_students()
+        choice = input("Enter the student number you would like to edit: ")
+
+        name = input("Enter Student Name: ")
+        surname = input("Enter Student Surname: ")
+        birthday = input("Enter Student Birthday(d/m/y): ")
+        gender = input("Enter Student Gender(M/F): ")
+        clas_id = int(input("Enter Student Class id: "))
+
+        student = Student(None, choice, name, surname, birthday, gender, clas_id)
+        self.db.edit_student(student)
+
+    def edit_teacher(self):
+        self.display_teachers()
+        choice = input("Enter the teacher id you would like to edit:")
+
+        branch = input("Enter Teacher Branch: ")
+        name = input("Enter Teacher Name: ")
+        surname = input("Enter Teacher Surname: ")
+        birthday = input("Enter Teacher Birthday(d/m/y): ")
+        gender = input("Enter Teacher Gender(M/F): ")
+
+        teacher = Teacher(choice, branch, name, surname, birthday, gender)
+        self.db.edit_teacher(teacher)
+
+    def delete_student(self):
+        pass
+
+    def delete_teacher(self):
+        pass
 
 
 if __name__ == "__main__":
