@@ -117,6 +117,26 @@ class Db_Manager:
         except sqlite3.Error as err:
             print("Error:", err)
 
+    def del_student(self, StudentNumber):
+        sql = "DELETE FROM STUDENT WHERE StudentNumber=?"
+        value = (StudentNumber,)
+        self.cursor.execute(sql, value)
+        try:
+            self.connection.commit()
+            print("Deleted Student", StudentNumber)
+        except sqlite3.Error as err:
+            print(err)
+
+    def del_teacher(self, Id):
+        sql = "DELETE FROM Teacher WHERE Id=?"
+        value = (Id,)
+        self.cursor.execute(sql, value)
+        try:
+            self.connection.commit()
+            print("Deleted Teacher", Id)
+        except sqlite3.Error as err:
+            print(err)
+
 
 if __name__ == "__main__":
     db = Db_Manager()
@@ -134,8 +154,13 @@ if __name__ == "__main__":
     # db.edit_teacher(tchr)
     # teacher = db.get_teacher_by_id(1)
     # teacher2 = db.get_teacher_by_branch("Cs")
-    clas_list = db.get_classes()
-    print(clas_list)
+    # clas_list = db.get_classes()
+    # print(clas_list)
     students = db.get_students()
     for student in students:
         print(student.StudentNumber, student.Name, student.Surname, student.ClassID)
+    # teachers = db.get_teachers()
+    # for teacher in teachers:
+    #     print(teacher.Branch, teacher.Name, teacher.Surname, teacher.Id)
+    # # db.del_teacher(3)
+    # db.del_student(103)
