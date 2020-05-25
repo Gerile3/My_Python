@@ -10,7 +10,7 @@ class App:
     def init_app(self):
         while True:
             choice = input("--*----------*--\nSchool DB Manager v.01\n1-Student List\n2-Teacher List\n3-Add Student"
-                           "\n4-Add Teacher\n5-Edit Student\n6-Edit Teacher\n7-Exit\n>>")
+                           "\n4-Add Teacher\n5-Edit Student\n6-Edit Teacher\n7-Delete Student\n8-Delete Teacher\n9-Quit\n>>")
 
             if choice == "1":
                 self.display_students()
@@ -25,6 +25,10 @@ class App:
             elif choice == "6":
                 self.edit_teacher()
             elif choice == "7":
+                self.delete_student()
+            elif choice == "8":
+                self.delete_teacher()
+            elif choice == "9" or choice.lower() == "q":
                 break
             else:
                 print("Wrong choice")
@@ -98,10 +102,14 @@ class App:
         self.db.edit_teacher(teacher)
 
     def delete_student(self):
-        pass
+        self.display_students()
+        choice = input("Enter the student number you would like to delete: ")
+        self.db.del_student(choice)
 
     def delete_teacher(self):
-        pass
+        self.display_teachers()
+        choice = input("Enter the teacher id you would like to delete:")
+        self.db.del_teacher(choice)
 
 
 if __name__ == "__main__":
