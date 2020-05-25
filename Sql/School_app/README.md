@@ -1,4 +1,4 @@
-# Example of school database with sqllite3
+# Example of school database with sqlite3
 
 ### A school db example that can add,edit,remove,show student/teachers/classes
 
