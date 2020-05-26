@@ -1,3 +1,6 @@
 import sqlite3
 
-connection = sqlite3.connect('H:\\Program Files\\Git_Projects\\My_Python\\Sql\\School_app\\mydb.db')
+try:
+    connection = sqlite3.connect("Path\\to\\database")
+except sqlite3.Error as e:
+    print(e, "\nMake sure to specify database location in connection.py")
