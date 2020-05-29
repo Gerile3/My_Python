@@ -8,7 +8,7 @@ class Card:
         self.suits = ["Clubs (♣)", "Diamonds (♦)", "Hearts (♥)", "Spades (♠)"]
 
     def shuffle(self):
-        cards = Card._build_deck(self)
+        cards = self._build_deck()
         random.shuffle(cards)
         return cards
 
@@ -36,7 +36,11 @@ class Card:
             if num == 1:
                 return "Ace" + " of " + "Clubs (♣)"
             if num > 1:
-                pass  # todo
+                deck = self._build_deck()
+                result = []
+                for i in range(0, num):
+                    result.append(deck[i])
+                return result
 
 
 if __name__ == "__main__":
@@ -47,3 +51,5 @@ if __name__ == "__main__":
     print("********\n", one_card)
     multi_card = card.get_card(num=10)
     print("********\n", multi_card)
+    sorted_multi_card = card.get_card(_random=False, num=10)
+    print("********\n", sorted_multi_card)
