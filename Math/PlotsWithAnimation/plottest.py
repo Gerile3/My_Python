@@ -1,6 +1,20 @@
 from matplotlib import pyplot as plt
 from matplotlib import animation
 
+""" Simple circle animation and Circles in Square Plot"""
+# Todo:
+# P (x, y) > Q (y + 1 − 1.4x2, 0.3x) , Hénon’s Function
+# Sierpin´ ski triangle:
+# Transformation 1:
+# xn+1 = 0.5xn
+# yn+1 = 0.5yn
+# Transformation 2:
+# xn+1 = 0.5xn + 0.5
+# yn+1 = 0.5yn + 0.5Drawing Geometric Shapes and Fractals 171
+# Transformation 3:
+# xn+1 = 0.5xn + 1
+# yn+1 = 0.5yn
+
 
 def create_circle(x=0, y=0):
     circle = plt.Circle((x, y), 0.5, color="b")
