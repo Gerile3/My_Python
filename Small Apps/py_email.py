@@ -1,7 +1,9 @@
+#!/usr/bin/env python3
 import smtplib
 
 
 class Pymail:
+    """An app to send emails (using gmail) with python"""
     def __init__(self, gmail, password):
         self.gmail = gmail
         self.password = password
