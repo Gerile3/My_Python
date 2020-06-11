@@ -7,7 +7,7 @@ def db_connect(db_name):
         return conn
     except sqlite3.Error as e:
         print(e)
-    return None
+        return None
 
 
 def create_table(conn):
@@ -40,9 +40,15 @@ def insert_row(conn, name, email):
         print('Already exists in db')
 
 
+def return_all(conn):
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM {}".format(db_name))
+    print(cur.fetchall())
+
+
 if __name__ == "__main__":
     db_name = input("Enter the name of the database you would like to create: ")
     conn = db_connect(db_name)  # connects to db
     create_table(conn)  # creates db in the current directory with given name
-    search_db(conn, 'name', 'Harry')  # checks if db has impshum in name column
+    search_db(conn, 'name', 'Harry')  # checks if db has Harry in name column
     insert_row(conn, 'Harry', 'test@test.com')  # adds harry and email to database
