@@ -43,7 +43,14 @@ def insert_row(conn, name, email):
 def return_all(conn):
     cur = conn.cursor()
     cur.execute("SELECT * FROM {}".format(db_name))
-    print(cur.fetchall())
+    items = cur.fetchall()
+    for item in items:
+        print(item)
+    try:
+        conn.commit()
+    except sqlite3.Error as err:
+        print(err)
+        return None
 
 
 if __name__ == "__main__":
@@ -52,3 +59,4 @@ if __name__ == "__main__":
     create_table(conn)  # creates db in the current directory with given name
     search_db(conn, 'name', 'Harry')  # checks if db has Harry in name column
     insert_row(conn, 'Harry', 'test@test.com')  # adds harry and email to database
+    return_all(conn)  # Prints out everything inside our database
