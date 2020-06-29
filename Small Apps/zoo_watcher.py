@@ -126,7 +126,7 @@ It seems there will be more rabbits soon!"""
 if __name__ == "__main__":
     animals = {"Camel": camel, "Lion": lion, "Deer": deer, "Goose": goose, "Bat": bat, "Rabbit": rabbit}
     tags = list(animals.keys())
-    welcome = input("Welcome to Zoo!\n===============\n1-) Enter Zoo\n2-) Animals\n3-) Quit \n>>")
+    welcome = input("Welcome to Zoo!\n===============\n1-) Enter Zoo\n2-) Animals\n3-) Quit \n>> ")
     if welcome == "1":
         play = True
         while play:
