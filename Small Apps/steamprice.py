@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -34,10 +33,12 @@ def check_price(word):
             user_note = "None"
 
         gtype = summary.find("div", class_="pull-right").text
-        date = summary.find("div", class_="pull-right").span["data-original-title"]
+        date = summary.find(
+            "div", class_="pull-right").span["data-original-title"]
         date = re.sub(r'<em>|</em>|<br />|<sup>|nd|</sup>', '', date)
 
-        info.update({'Picture': pic, 'Title': title, 'Price': price, 'UserNote': user_note, 'MetaNote': meta_note, 'GameType': gtype, 'Date': date})
+        info.update({'Picture': pic, 'Title': title, 'Price': price,
+                     'UserNote': user_note, 'MetaNote': meta_note, 'GameType': gtype, 'Date': date})
 
         return info
 
