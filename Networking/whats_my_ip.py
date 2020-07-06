@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """ Script to print out local ip and public ip"""
 import socket
 import requests
