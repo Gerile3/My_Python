@@ -3,7 +3,23 @@
 ![Python Version][pypi-image]
 ![GitHub commits][commits]
 
-Here you can find some scripts & small apps i have written with Python for various of things.
+> In this repo you can find the codes that i have written on various subjects, tools and things that grabbed my attention. All codes written on Vscode with exception on bash ones that i have written on my raspberry pi. Currently using python 3.8.1.
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [Arduino](#Arduino)
+* [Bash](#Bash)
+* [Basics](#Basics)
+* [Math](#Math)
+* [MongoDB](#MongoDB)
+* [Networking](#Networking)
+* [Pygame](#Pygame)
+* [PyQt5](#PyQt5)
+* [Small Apps](#Small)
+* [Sql](#Sql)
+* [Statistics](#Statistics)
+* [Contact](#Contact)
 
 ## [`Arduino`](https://github.com/Gerile3/My_Python/tree/master/Arduino)
 
