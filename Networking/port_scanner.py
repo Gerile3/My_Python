@@ -6,6 +6,8 @@ from datetime import datetime
 
 
 def port_scan():
+    """Basic Port scanner, scans ports between 50-85 for faster results.
+    """
     try:
         if len(sys.argv) == 2:
             if len(sys.argv[1].split(".")) == 4 and socket.inet_aton(sys.argv[1]):
